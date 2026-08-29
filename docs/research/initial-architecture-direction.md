@@ -33,6 +33,14 @@ Native browser events may still be used privately to capture interaction and tra
 
 The model should distinguish an intent or request from an established fact. A UI component may emit `colour-theme.apply.requested`; the behavior that performs the action should emit `colour-theme.applied` only after it succeeds. Components can then react to that resulting semantic event or to the state derived from it.
 
+## Component purpose and process wiring
+
+A visual component is provisionally understood as a reusable presentation unit, potentially with reusable private presentation logic. Its public contract describes what it can represent, its inputs, and its semantic output events; it should not embed application-specific process logic.
+
+An association between a component and a detached process may therefore be derived from the component's declared event contract and an event/process registry, rather than declared directly by the component. A declarative application-level composition or wiring manifest may make those derived associations inspectable without coupling a reusable component to a particular application workflow.
+
+The detached unit is not yet named. It is expected to receive semantic events, optionally retain state, decide transitions, invoke effects or commands, emit semantic events, and possibly supply state for presentation. Candidate names include *behavior*, *process*, *reaction*, *controller*, and *orchestrator*. `Process` is currently a useful working term for a stateful unit; `reaction` may describe a smaller stateless response.
+
 ## Design questions to investigate
 
 - Which browser APIs should form the component foundation: Custom Elements, Shadow DOM, slots, templates, `EventTarget`, or something else?
