@@ -13,3 +13,7 @@ Before contributing, read:
 5. Relevant records in [decisions](docs/decisions/README.md), [research](docs/research/README.md), and [sessions](docs/sessions/README.md)
 
 The project is currently in its exploration phase; no implementation decisions have been made.
+
+## Branching
+
+`dev` is the active development branch. `releases` is used when preparing and publishing a release. `main` is updated only as a backup of a version that is known to be stable. See [ADR-001](docs/decisions/ADR-001-branching-strategy.md).
