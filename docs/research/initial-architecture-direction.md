@@ -25,6 +25,14 @@ Behavior code, scripts, state machines, and side effects would be defined elsewh
 
 This could make a component a declarative UI contract rather than a bundle of presentation and imperative logic. It remains to be investigated whether that model is performant, usable, and sufficiently expressive.
 
+## Semantic event contracts
+
+A component's declared inputs and outputs should use custom events that express domain or business meaning, rather than browser gestures such as `click` or `hover`. For example, a colour-theme switcher could work with events such as `colour-theme.apply.requested` and `colour-theme.applied`.
+
+Native browser events may still be used privately to capture interaction and translate it into semantic custom events. They are not part of the component's public contract. This keeps the component usable from other interaction mechanisms and makes the behavior layer independent of a particular gesture.
+
+The model should distinguish an intent or request from an established fact. A UI component may emit `colour-theme.apply.requested`; the behavior that performs the action should emit `colour-theme.applied` only after it succeeds. Components can then react to that resulting semantic event or to the state derived from it.
+
 ## Design questions to investigate
 
 - Which browser APIs should form the component foundation: Custom Elements, Shadow DOM, slots, templates, `EventTarget`, or something else?
