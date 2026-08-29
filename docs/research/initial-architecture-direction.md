@@ -80,6 +80,14 @@ Presentation definitions and DOM bindings do not name a process directly; they o
 
 Within a given scope, an intent/request event should normally have exactly one responsible process. An established-fact event may have zero, one, or many observing processes. For example, one process applies `colour-theme.preference.requested`, while any number may observe `colour-theme.applied`.
 
+## Process transition model
+
+A process is a state-aware decision-making unit. It may be modeled as a finite-state machine or statechart when its workflow warrants one, while smaller processes may be stateless reactions. Given current state and a semantic event, it determines a transition and may request effects or declare resulting semantic facts.
+
+Processes must declare their state transitions rather than directly mutate state. The state manager owns committing, validating, retaining, and notifying changes to both application and process-private state. A process can still use ordinary JavaScript to compute a plain transition description; this does not require an elaborate declarative language.
+
+Similarly, processes should declare requested commands or effects rather than directly manipulating the DOM or platform APIs. Dedicated state, effect, event-dispatch, and rendering modules perform their respective operations. This keeps process decisions deterministic, testable, inspectable, and portable between server and browser environments.
+
 ## Component purpose and process wiring
 
 A visual component is provisionally understood as a reusable presentation unit, potentially with reusable private presentation logic. Its public contract describes what it can represent, its inputs, and its semantic output events; it should not embed application-specific process logic.
