@@ -60,6 +60,14 @@ A likely efficient model is event delegation: one listener on an application roo
 
 Open questions include attribute syntax, payload validation and dynamic values, how bindings are cached or inspected, event cancellation, component boundaries, and development-time diagnostics.
 
+### Event catalog and validation
+
+The browser permits arbitrary `CustomEvent` names, so the event bridge can remain open at runtime. Separately, explore an optional application-level event catalog for semantic events. It would declare an event type, its payload contract, and possibly its known producers and consumers.
+
+The catalog should be assembled during application composition, before the DOM event bridge is activated. Reusable presentation definitions and detached processes could each declare the event contracts they emit or consume; the application composition selects and validates the contracts in use. In development, this enables diagnostics for unknown event types and invalid payloads. Production need not pay for exhaustive validation.
+
+Keep the catalog distinct from the event dispatcher: one describes and validates the protocol; the other routes runtime events. The model should also allow intentional unregistered events for browser interoperation or incremental adoption.
+
 ## Component purpose and process wiring
 
 A visual component is provisionally understood as a reusable presentation unit, potentially with reusable private presentation logic. Its public contract describes what it can represent, its inputs, and its semantic output events; it should not embed application-specific process logic.
