@@ -45,6 +45,21 @@ For example, `colour-theme.preference.requested` describes a request about the c
 
 This is a working convention, not a final standard. Consistency and discoverability matter more than a universally correct order; if a broader preference domain proves more useful, revisit the convention.
 
+## Declarative DOM event bridge
+
+Explore a generic runtime facility that recognizes declarative DOM attributes such as:
+
+```html
+data-emit-event="click:colour-theme.preference.requested"
+data-event-detail='{"preference":"light"}'
+```
+
+Its sole role would be to translate the native `click` interaction into a semantic `CustomEvent` with type `colour-theme.preference.requested` and the declared value as `event.detail`. It must not mutate application state or invoke the colour-theme process directly.
+
+A likely efficient model is event delegation: one listener on an application root receives bubbling native events, finds the relevant declarative binding on the event target or an ancestor, and dispatches the semantic custom event from that DOM location. DOM nodes added after initial page load would then work without rescanning or per-node listener setup. A `MutationObserver` may be useful only for explicit lifecycle work or optional pre-validation, not as the normal dispatch path.
+
+Open questions include attribute syntax, payload validation and dynamic values, how bindings are cached or inspected, event cancellation, component boundaries, and development-time diagnostics.
+
 ## Component purpose and process wiring
 
 A visual component is provisionally understood as a reusable presentation unit, potentially with reusable private presentation logic. Its public contract describes what it can represent, its inputs, and its semantic output events; it should not embed application-specific process logic.
