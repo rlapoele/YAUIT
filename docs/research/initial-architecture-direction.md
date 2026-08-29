@@ -33,6 +33,18 @@ Native browser events may still be used privately to capture interaction and tra
 
 The model should distinguish an intent or request from an established fact. A UI component may emit `colour-theme.apply.requested`; the behavior that performs the action should emit `colour-theme.applied` only after it succeeds. Components can then react to that resulting semantic event or to the state derived from it.
 
+### Working event-name convention
+
+Use a subject-first dotted namespace for semantic event types:
+
+```text
+<subject>.<aspect-or-action>.<lifecycle>
+```
+
+For example, `colour-theme.preference.requested` describes a request about the colour-theme preference. This groups all events concerning the same subject together, such as `colour-theme.preference.requested`, `colour-theme.applied`, and `colour-theme.system-preference.changed`.
+
+This is a working convention, not a final standard. Consistency and discoverability matter more than a universally correct order; if a broader preference domain proves more useful, revisit the convention.
+
 ## Component purpose and process wiring
 
 A visual component is provisionally understood as a reusable presentation unit, potentially with reusable private presentation logic. Its public contract describes what it can represent, its inputs, and its semantic output events; it should not embed application-specific process logic.
