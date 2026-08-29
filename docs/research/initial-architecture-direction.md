@@ -41,6 +41,18 @@ An association between a component and a detached process may therefore be deriv
 
 The detached unit is not yet named. It is expected to receive semantic events, optionally retain state, decide transitions, invoke effects or commands, emit semantic events, and possibly supply state for presentation. Candidate names include *behavior*, *process*, *reaction*, *controller*, and *orchestrator*. `Process` is currently a useful working term for a stateful unit; `reaction` may describe a smaller stateless response.
 
+## Shared exploration example: colour-theme preference UI
+
+Use a portion of the DOM that lets a person choose a colour-theme preference as a recurring discussion example. Do not treat it as a component yet.
+
+Its initial responsibilities are to:
+
+1. Show the currently active colour theme.
+2. Show whether the active theme comes from an explicit human choice or from the system colour-scheme setting.
+3. Expose controls through which a person can request an explicit light theme, an explicit dark theme, or use of the system colour theme.
+
+Questions to examine through this example include the distinction between an explicit preference, the system preference, and the effective rendered theme; semantic event contracts; process ownership; browser integration; and server rendering.
+
 ## Design questions to investigate
 
 - Which browser APIs should form the component foundation: Custom Elements, Shadow DOM, slots, templates, `EventTarget`, or something else?
