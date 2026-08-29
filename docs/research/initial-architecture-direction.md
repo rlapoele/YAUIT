@@ -68,6 +68,18 @@ The catalog should be assembled during application composition, before the DOM e
 
 Keep the catalog distinct from the event dispatcher: one describes and validates the protocol; the other routes runtime events. The model should also allow intentional unregistered events for browser interoperation or incremental adoption.
 
+## Process selection and event routing
+
+Use a hybrid process-selection model:
+
+1. A detached process declares the semantic event types it consumes.
+2. Application composition explicitly installs processes in an application, page, or other runtime scope.
+3. The dispatcher derives event-to-process routing from the installed processes' declarations.
+
+Presentation definitions and DOM bindings do not name a process directly; they only emit semantic events. This keeps reusable presentation independent of a particular workflow while keeping activated processes explicit and inspectable in application composition.
+
+Within a given scope, an intent/request event should normally have exactly one responsible process. An established-fact event may have zero, one, or many observing processes. For example, one process applies `colour-theme.preference.requested`, while any number may observe `colour-theme.applied`.
+
 ## Component purpose and process wiring
 
 A visual component is provisionally understood as a reusable presentation unit, potentially with reusable private presentation logic. Its public contract describes what it can represent, its inputs, and its semantic output events; it should not embed application-specific process logic.
