@@ -14,6 +14,10 @@ Read `README.md`, `docs/vision.md`, `docs/principles.md`, `docs/glossary.md`, an
 - Keep the documents short, factual, and cross-linked instead of duplicating content.
 - Update the vision, principles, glossary, or roadmap when a conclusion changes them.
 
+## Commit-message guidance
+
+After creating, updating, or deleting repository files, provide the user with a short recommended commit message. Do not create a commit unless the user asks.
+
 ## Exploration phase
 
 Do not add implementation code unless explicitly requested. Clearly distinguish hypotheses, open questions, and decisions.

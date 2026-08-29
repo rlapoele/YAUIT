@@ -12,12 +12,27 @@ Explore whether a small front-end library or framework can:
 3. Use custom events as the communication mechanism between components, with a central behavior registry and command centre for application-level coordination.
 4. Support server-side rendering of components as well as browser use.
 
+## Declarative component-to-behavior linking
+
+The central hypothesis is that defining a component should involve only a declarative description of:
+
+1. Its presentation for the UI states it can represent.
+2. Its inputs.
+3. Its outputs, expressed as event contracts.
+4. The separately defined behaviors with which it is associated.
+
+Behavior code, scripts, state machines, and side effects would be defined elsewhere and registered by name or capability. At runtime, the system would link an instance of a declared component to its declared behavior. A component need not carry its own behavior script.
+
+This could make a component a declarative UI contract rather than a bundle of presentation and imperative logic. It remains to be investigated whether that model is performant, usable, and sufficiently expressive.
+
 ## Design questions to investigate
 
 - Which browser APIs should form the component foundation: Custom Elements, Shadow DOM, slots, templates, `EventTarget`, or something else?
 - Which responsibilities remain inside a component, and which belong to a behavior/state layer?
 - How can a central event mechanism remain observable and explicit without becoming a global, unstructured event bus?
 - What does server-side support mean in practice: HTML generation, progressive enhancement, hydration, Declarative Shadow DOM, or all of these?
+- How are separately defined behaviors named, scoped per component instance, linked, started, and disposed?
+- Are behaviors ordinary JavaScript modules, declarative state-machine descriptions, or a combination of both?
 - Which limitations are acceptable in exchange for using the web platform directly?
 
 ## Related concepts to study

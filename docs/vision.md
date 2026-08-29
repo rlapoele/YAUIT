@@ -7,7 +7,8 @@ How might a small library or framework help people create front-ends for website
 The initial direction is to explore a web-platform-first architecture that:
 
 - Makes component-oriented UI development easier using existing Web APIs.
-- Separates UI/presentation from behavior and state transitions.
+- Lets a component declaratively describe its presentation, inputs, outputs, and associated behaviors.
+- Separates a component's UI/presentation from behavior code and state transitions.
 - Uses custom events for component communication, with a central behavior registry and command centre for application-level coordination.
 - Allows components to be rendered on the server as well as used in the browser.
 
