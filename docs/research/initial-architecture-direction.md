@@ -88,6 +88,14 @@ Processes must declare their state transitions rather than directly mutate state
 
 Similarly, processes should declare requested commands or effects rather than directly manipulating the DOM or platform APIs. Dedicated state, effect, event-dispatch, and rendering modules perform their respective operations. This keeps process decisions deterministic, testable, inspectable, and portable between server and browser environments.
 
+## Process scope and lifecycle
+
+Distinguish a reusable process declaration from a live process instance. A process instance has current state and a lifetime bounded by a runtime scope. It is activated when its scope is activated (immediately or, later, lazily) and must be unsubscribed, have its state released, and have outstanding effects cancelled or safely ignored when that scope ends.
+
+Scopes may be nested. The outer application scope is normally created at application bootstrap. A DOM-region scope is a deliberate runtime/lifecycle boundary and is not synonymous with a visual component: components may have no process scope, several components may share a scope, and a component may optionally provide a boundary.
+
+Process declarations do not identify or create scopes. They may declare compatible scope types. Application composition decides where a process is installed; application bootstrap or declarative DOM boundaries identify actual scopes; and a scope manager creates and disposes the corresponding process instances. A DOM region may later use metadata such as `data-process-scope="theme-settings"`. Dynamic DOM insertion/removal may require lifecycle observation by the scope manager, independently of the event bridge's delegated event flow.
+
 ## Component purpose and process wiring
 
 A visual component is provisionally understood as a reusable presentation unit, potentially with reusable private presentation logic. Its public contract describes what it can represent, its inputs, and its semantic output events; it should not embed application-specific process logic.
