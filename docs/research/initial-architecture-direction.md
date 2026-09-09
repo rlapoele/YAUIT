@@ -1,7 +1,7 @@
 # Initial architecture direction
 
 - **Date:** 2026-08-29
-- **Status:** Exploration hypothesis; not a decision
+- **Status:** Exploration hypothesis; the HTML authoring model was subsequently accepted in [ADR-002](../decisions/ADR-002-event-oriented-dom-activation.md), while the remaining architecture is not decided
 
 ## Core interests
 
