@@ -7,6 +7,7 @@
 - Identify a narrow learning-oriented first experiment.
 - Define the `data-on` domain-event-to-presentation-action contract.
 - Test emerging contracts against the decoupled todo reference system defined in [ADR-004](decisions/ADR-004-use-decoupled-todo-reference-system.md).
+- Evolve the initial `data-emit` prototype only as additional contracts are accepted.
 
 ## Open questions
 

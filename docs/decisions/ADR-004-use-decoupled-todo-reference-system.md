@@ -28,7 +28,7 @@ The todo system will be architecturally separate from YAUIT and use a lightweigh
 - An outer composition root selects the runtime root, application instance, processes, event contracts, payload builders, presentation actions, and persistence adapter.
 - YAUIT owns only generic runtime, hub, declarative binding, scope, lifecycle, registry, validation, and diagnostic mechanisms.
 
-The reference is currently a specification tool. This decision does not authorize implementation during the exploration phase.
+The reference began as a specification tool. An initial prototype limited to the accepted `data-emit` contract was explicitly authorized on 2026-09-09; further behavior remains subject to the exploration decisions.
 
 ## Consequences
 
