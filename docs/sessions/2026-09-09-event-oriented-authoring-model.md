@@ -19,6 +19,8 @@ Completed the initial `data-emit` contract. It uses semicolon-separated, validat
 
 Accepted a persisted, filterable todo-item management system as the shared reference scenario for subsequent design work. The todo system will be a separate consumer of YAUIT and use a lightweight Clean Architecture with ports and adapters. Its application core must not depend on YAUIT, the DOM, or a persistence technology; an outer composition root will connect YAUIT and persistence adapters. Multiple list instances and both pre-rendered and dynamically inserted HTML will exercise routing and lifecycle decisions.
 
+Added developer experience as an explicit design constraint: common usage should be concise and straightforward, with repetitive runtime plumbing handled by YAUIT. This convenience must not weaken the accepted boundaries around domain-event ownership, payload validation, application-state isolation from HTML, or rendering independence. Low-level APIs remain available for exceptional cases rather than becoming mandatory ceremony.
+
 See [ADR-002](../decisions/ADR-002-event-oriented-dom-activation.md), [ADR-003](../decisions/ADR-003-publish-declarative-domain-events-through-runtime-hub.md), and [ADR-004](../decisions/ADR-004-use-decoupled-todo-reference-system.md).
 
 ## Open questions
