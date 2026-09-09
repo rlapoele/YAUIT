@@ -6,6 +6,7 @@
 - Examine front-end concepts, techniques, architectures, and trade-offs.
 - Identify a narrow learning-oriented first experiment.
 - Define domain-event routing and application scopes for the runtime-owned event hub.
+- Test emerging contracts against the decoupled todo reference system defined in [ADR-004](decisions/ADR-004-use-decoupled-todo-reference-system.md).
 
 ## Open questions
 

@@ -15,7 +15,9 @@ One runtime owns one hub. Independent runtime instances are isolated by default;
 
 Clarified that YAUIT uses the DDD meaning of domain event: it is a record of something that has already occurred. A `requested` event records the occurrence of a user or business request, while a later event records whether the requested outcome was established, rejected, or failed. Commands and technical runtime notifications are separate concepts.
 
-See [ADR-002](../decisions/ADR-002-event-oriented-dom-activation.md) and [ADR-003](../decisions/ADR-003-publish-declarative-domain-events-through-runtime-hub.md).
+Accepted a persisted, filterable todo-item management system as the shared reference scenario for subsequent design work. The todo system will be a separate consumer of YAUIT and use a lightweight Clean Architecture with ports and adapters. Its application core must not depend on YAUIT, the DOM, or a persistence technology; an outer composition root will connect YAUIT and persistence adapters. Multiple list instances and both pre-rendered and dynamically inserted HTML will exercise routing and lifecycle decisions.
+
+See [ADR-002](../decisions/ADR-002-event-oriented-dom-activation.md), [ADR-003](../decisions/ADR-003-publish-declarative-domain-events-through-runtime-hub.md), and [ADR-004](../decisions/ADR-004-use-decoupled-todo-reference-system.md).
 
 ## Open questions
 
