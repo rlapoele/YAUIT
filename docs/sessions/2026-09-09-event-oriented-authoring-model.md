@@ -13,6 +13,8 @@ The `data-emit` architectural contract was also accepted. A declaration translat
 
 One runtime owns one hub. Independent runtime instances are isolated by default; components and features do not receive separate hubs. Any future communication between independent hubs must be explicit.
 
+Clarified that YAUIT uses the DDD meaning of domain event: it is a record of something that has already occurred. A `requested` event records the occurrence of a user or business request, while a later event records whether the requested outcome was established, rejected, or failed. Commands and technical runtime notifications are separate concepts.
+
 See [ADR-002](../decisions/ADR-002-event-oriented-dom-activation.md) and [ADR-003](../decisions/ADR-003-publish-declarative-domain-events-through-runtime-hub.md).
 
 ## Open questions

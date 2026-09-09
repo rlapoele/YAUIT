@@ -19,6 +19,8 @@ For payloads, the considered options were literal JSON in HTML, automatic infere
 
 Each YAUIT runtime will own one event hub. A `data-emit` declaration will translate a native event received for its element into a domain event published through that runtime's hub. Domain events will not use DOM bubbling or capturing as their default routing mechanism.
 
+A domain event is always an immutable record of something that has occurred and matters in the application's domain. An event ending in `requested` records that a user or business request occurred; it does not assert that the requested outcome succeeded. Imperative commands and technical runtime notifications are not domain events.
+
 Components and features installed in one runtime share its hub; they do not receive separate hubs. Independent runtime instances are isolated by default. If communication between independent hubs is later supported, it must use an explicit, directional, disposable bridge with an event allowlist rather than implicit global forwarding.
 
 The declaring element and triggering native event may be retained as publication metadata for payload construction and diagnostics. They are not part of the domain payload contract by default.

@@ -31,7 +31,7 @@ A component's declared inputs and outputs should use custom events that express 
 
 Native browser events may still be used privately to capture interaction and translate it into semantic custom events. They are not part of the component's public contract. This keeps the component usable from other interaction mechanisms and makes the behavior layer independent of a particular gesture.
 
-The model should distinguish an intent or request from an established fact. A UI component may emit `colour-theme.apply.requested`; the behavior that performs the action should emit `colour-theme.applied` only after it succeeds. Components can then react to that resulting semantic event or to the state derived from it.
+Domain events always record something that has occurred. The model should distinguish the fact that an intent or request occurred from the fact that its requested outcome was established. A UI component may emit `colour-theme.apply.requested` after the request occurs; the behavior that performs the action should emit `colour-theme.applied` only after it succeeds. Components can then react to that resulting semantic event or to the state derived from it.
 
 ### Working event-name convention
 
@@ -78,7 +78,7 @@ Use a hybrid process-selection model:
 
 Presentation definitions and DOM bindings do not name a process directly; they only emit semantic events. This keeps reusable presentation independent of a particular workflow while keeping activated processes explicit and inspectable in application composition.
 
-Within a given scope, an intent/request event should normally have exactly one responsible process. An established-fact event may have zero, one, or many observing processes. For example, one process applies `colour-theme.preference.requested`, while any number may observe `colour-theme.applied`.
+Within a given scope, an event recording a request should normally have exactly one process responsible for deciding how the application responds, although other processes may observe it. An event recording an established outcome may have zero, one, or many observing processes. For example, one process applies `colour-theme.preference.requested`, while any number may observe `colour-theme.applied`.
 
 ## Process transition model
 
