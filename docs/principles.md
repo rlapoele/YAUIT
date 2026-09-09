@@ -6,7 +6,7 @@ YAUIT should progressively activate existing HTML regardless of how that HTML wa
 
 ## Keep HTML event-oriented
 
-HTML may declare translations from native interactions to semantic domain events and relationships from domain events to presentation actions. It should not refer directly to application state paths or model properties.
+HTML may declare translations from native interactions to semantic domain events and relationships from domain events to presentation actions. It should not refer directly to application state paths, model properties, or domain payload structures. Ordinary HTML control values remain part of the interface; JavaScript translates them into validated domain payloads.
 
 ## Keep application behavior in JavaScript
 
