@@ -16,15 +16,29 @@ The project is currently in its exploration phase. Accepted decisions are record
 
 ## Initial prototype
 
-The first prototype implements only the accepted `data-emit` contract. It uses browser-native ES modules and requires no consumer build step.
+The first prototype implements only the accepted `data-emit` contract. Its public modules use browser-native ES modules and require no consumer build step. Vite is development and packaging infrastructure, not a runtime dependency.
 
-Run a local static server from the repository root:
+Install the development dependencies and start the Vite server:
 
 ```sh
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Then open <http://localhost:8000/examples/todo-step-2/>.
+Then open <http://localhost:5173/>.
+
+Build the browser-ready YAUIT ES module with:
+
+```sh
+npm run build
+```
+
+Build or preview the bundled todo fixture with:
+
+```sh
+npm run build:example
+npm run preview
+```
 
 Run the dependency-free unit tests with:
 

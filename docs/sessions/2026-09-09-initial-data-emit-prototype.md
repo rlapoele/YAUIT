@@ -13,6 +13,7 @@
 - Added `start()` and `stop()` for the currently activated bindings.
 - Added a todo Step 2 fixture covering creation requests, completion-change requests, filter selection, and deletion requests.
 - Added dependency-free parser and runtime tests.
+- Added Vite as development and packaging infrastructure, with separate library and example builds. Vite is not a YAUIT runtime dependency and does not change the no-consumer-build decision.
 
 ## Provisional implementation choices
 
