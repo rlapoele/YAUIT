@@ -15,7 +15,7 @@
 - Who is the primary user of the library or framework?
 - What should it intentionally leave to existing tools?
 - What constraints or principles should guide the design?
-- What arguments, ordering, initialization, and error semantics should `data-on` presentation actions have?
+- What grammar, naming, registration, arguments, ordering, initialization, and error semantics should `data-on` presentation actions have?
 - After `data-on` is specified, how should runtime scopes affect event visibility and process ownership?
 
 ## Deferred `data-emit` extensions
