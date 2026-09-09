@@ -47,6 +47,8 @@ This is a working convention, not a final standard. Consistency and discoverabil
 
 ## Declarative DOM event bridge
 
+> The syntax and DOM-dispatch approach below were early hypotheses and are superseded by the accepted runtime-hub contract in [ADR-003](../decisions/ADR-003-publish-declarative-domain-events-through-runtime-hub.md).
+
 Explore a generic runtime facility that recognizes declarative DOM attributes such as:
 
 ```html

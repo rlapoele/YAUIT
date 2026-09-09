@@ -9,7 +9,7 @@ The project is pursuing a web-platform-first architecture that:
 - Makes component-oriented UI development easier using existing Web APIs.
 - Lets a component declaratively describe its presentation, inputs, outputs, and associated behaviors.
 - Separates a component's UI/presentation from behavior code and state transitions.
-- Uses custom events for component communication, with a central behavior registry and command centre for application-level coordination.
+- Uses immutable domain events carried by a runtime-owned event hub for application communication and coordination.
 - Allows components to be rendered on the server as well as used in the browser.
 - Progressively activates existing HTML regardless of whether it was rendered on the server, generated statically, or created in the browser.
 - Keeps the HTML authoring API event-oriented rather than coupled to application state paths or model properties.
