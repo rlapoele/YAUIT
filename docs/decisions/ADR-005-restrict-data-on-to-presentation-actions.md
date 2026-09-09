@@ -23,11 +23,20 @@ Neither `data-emit` nor `data-on` mutates application state:
 
 Application processes are installed through JavaScript composition and remain usable without YAUIT or the DOM. Their eventual registration API is outside this decision. Low-level event subscription remains available for non-presentation consumers and exceptional integration needs.
 
-The attribute grammar, action naming, invocation arguments, ordering, initialization, failure handling, scope, and lifecycle remain to be decided.
+The accepted `data-on` mapping form is:
+
+```text
+<domain-event> -> <presentation-action>[; ...]
+```
+
+Each mapping relates one domain-event type to one presentation-action name. Semicolons permit multiple mappings on the same element. The left-hand side uses the domain-event naming rules established in [ADR-003](ADR-003-publish-declarative-domain-events-through-runtime-hub.md). The right-hand side is a stable key in the owning runtime's action registry, such as `todo-list.render`; it is not a global JavaScript function reference, a function call, or an expression.
+
+Action registration, invocation arguments, ordering, initialization, modifiers, failure handling, scope, and lifecycle remain to be decided.
 
 ## Consequences
 
 - HTML cannot invoke arbitrary application services or business behavior.
+- Action names remain stable across JavaScript module organization and do not expose functions globally.
 - Presentation wiring can be declarative without coupling markup to application state or workflow.
 - Application state may change in response to DOM interaction or non-DOM sources such as initial loading, server messages, timers, and other application processes.
 - YAUIT can automate presentation subscription and cleanup while retaining a low-level publish-subscribe API.

@@ -21,7 +21,9 @@ Accepted a persisted, filterable todo-item management system as the shared refer
 
 Added developer experience as an explicit design constraint: common usage should be concise and straightforward, with repetitive runtime plumbing handled by YAUIT. This convenience must not weaken the accepted boundaries around domain-event ownership, payload validation, application-state isolation from HTML, or rendering independence. Low-level APIs remain available for exceptional cases rather than becoming mandatory ceremony.
 
-Started the `data-on` contract by restricting it to runtime-registered presentation actions. The declaring element is the presentation target. Neither declarative attribute mutates application state: `data-emit` adapts DOM input into a domain event, an application-owned process or use case makes business and state decisions, and `data-on` adapts a resulting domain event into presentation work. HTML cannot invoke arbitrary application services or business commands. The remaining `data-on` grammar and invocation semantics are still open.
+Started the `data-on` contract by restricting it to runtime-registered presentation actions. The declaring element is the presentation target. Neither declarative attribute mutates application state: `data-emit` adapts DOM input into a domain event, an application-owned process or use case makes business and state decisions, and `data-on` adapts a resulting domain event into presentation work. HTML cannot invoke arbitrary application services or business commands.
+
+Accepted the initial `data-on` mapping form `<domain-event> -> <presentation-action>[; ...]`. Each mapping connects one event type to one stable action-registry key, such as `todo-list.render`. The action name is not a global function reference, function call, or expression. Registration and invocation semantics remain open.
 
 See [ADR-002](../decisions/ADR-002-event-oriented-dom-activation.md), [ADR-003](../decisions/ADR-003-publish-declarative-domain-events-through-runtime-hub.md), [ADR-004](../decisions/ADR-004-use-decoupled-todo-reference-system.md), and [ADR-005](../decisions/ADR-005-restrict-data-on-to-presentation-actions.md).
 
