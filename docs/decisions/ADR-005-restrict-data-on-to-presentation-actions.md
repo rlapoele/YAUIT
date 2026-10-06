@@ -31,7 +31,7 @@ The accepted `data-on` mapping form is:
 
 Each mapping relates one domain-event type to one presentation-action name. Semicolons permit multiple mappings on the same element. The left-hand side uses the domain-event naming rules established in [ADR-003](ADR-003-publish-declarative-domain-events-through-runtime-hub.md). The right-hand side is a stable key in the owning runtime's action registry, such as `todo-list.render`; it is not a global JavaScript function reference, a function call, or an expression.
 
-Action registration, invocation arguments, ordering, initialization, modifiers, failure handling, scope, and lifecycle remain to be decided.
+[ADR-006](ADR-006-use-lightweight-structural-runtime-contracts.md) establishes function-first structural registration for processes and presentation actions. Exact invocation arguments, ordering, initialization, modifiers, failure handling, scope, and lifecycle remain to be decided.
 
 ## Consequences
 
