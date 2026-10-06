@@ -1,5 +1,5 @@
 # Sessions
 
-Store concise, dated discussion notes here using names such as `2026-08-29-project-memory.md`.
+Store concise, dated records of substantive discussions here.
 
-Each note should include the topic, key conclusions, open questions, and links to any research or decision records created or updated.
+Capture conclusions, unresolved questions, and links to the durable ideas, research, decisions, specifications, or plans affected by the discussion. Session notes provide history; accepted records remain authoritative.

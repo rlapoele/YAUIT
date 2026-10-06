@@ -1,13 +1,5 @@
 # Decisions
 
-Store Architecture Decision Records (ADRs) here using names such as `ADR-001-use-web-components.md`.
+Store accepted product and architecture decisions here as sequential ADRs.
 
-Each record should state:
-
-- Context
-- Options considered
-- Decision
-- Consequences
-- Date and status
-
-Do not create an ADR for a tentative idea; use research or a session note until a decision is made.
+Each record should capture its date, status, context, alternatives, decision, rationale, and consequences. Ideas and recommendations do not become decisions until the user explicitly accepts them.

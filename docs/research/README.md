@@ -1,5 +1,5 @@
 # Research
 
-Store exploratory notes and comparisons here. Use descriptive filenames, for example `reactivity-models.md` or `comparison-react-vue-svelte.md`.
+Store investigations, evidence, comparisons, experiments, and external references here.
 
-Research records may contain open questions and do not imply a decision.
+Research informs decisions but is not authoritative by itself.

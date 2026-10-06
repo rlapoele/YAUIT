@@ -1,53 +1,7 @@
 # YAUIT
 
-An exploration of a small library or framework for making web front-end development easier.
+YAUIT has been reset for a fresh exploration.
 
-## Project memory
+No product direction, architecture, technology stack, or public API is currently accepted. Work begins with ideation and progresses through explicit decisions, specifications, plans, and implementation.
 
-Before contributing, read:
-
-1. [Vision](docs/vision.md)
-2. [Principles](docs/principles.md)
-3. [Glossary](docs/glossary.md)
-4. [Roadmap](docs/roadmap.md)
-5. Relevant records in [decisions](docs/decisions/README.md), [research](docs/research/README.md), and [sessions](docs/sessions/README.md)
-
-The project is currently in its exploration phase. Accepted decisions are recorded in `docs/decisions/`; implementation remains experimental and the documentation is authoritative.
-
-## Initial prototype
-
-The first prototype implements only the accepted `data-emit` contract. Its public modules use browser-native ES modules and require no consumer build step. Vite is development and packaging infrastructure, not a runtime dependency.
-
-Install the development dependencies and start the Vite server:
-
-```sh
-npm install
-npm run dev
-```
-
-Then open <http://localhost:5173/>.
-
-Build the browser-ready YAUIT ES module with:
-
-```sh
-npm run build
-```
-
-Build or preview the bundled todo fixture with:
-
-```sh
-npm run build:example
-npm run preview
-```
-
-Run the dependency-free unit tests with:
-
-```sh
-npm test
-```
-
-The prototype intentionally excludes `data-on`, application state, persistence, rendering abstractions, runtime scopes, hub bridges, middleware, and dynamic-DOM lifecycle behavior until those contracts are discussed.
-
-## Branching
-
-`dev` is the active development branch. `releases` is used when preparing and publishing a release. `main` is updated only as a backup of a version that is known to be stable. See [ADR-001](docs/decisions/ADR-001-branching-strategy.md).
+Project memory is organized under [`docs/`](docs/README.md). The current state is recorded in [`docs/current.md`](docs/current.md).

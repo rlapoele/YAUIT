@@ -2,22 +2,10 @@
 
 This repository is the durable memory for the project.
 
-## Before working
+Before working, read `README.md`, `docs/current.md`, and the records relevant to the task. Use applicable available skills and follow their workflow.
 
-Read `README.md`, `docs/vision.md`, `docs/principles.md`, `docs/glossary.md`, and `docs/roadmap.md`. Then read any records relevant to the current topic.
+Keep exploration, accepted decisions, specifications, plans, and implementation distinct. Do not treat an idea, example, or prototype as an accepted contract. Do not implement product code until the user explicitly authorizes it.
 
-## Recording knowledge
+Update `docs/current.md` when the active phase or next step changes. Keep durable records concise, factual, and cross-linked.
 
-- Put a durable architectural or product decision in `docs/decisions/`.
-- Put investigation and comparisons in `docs/research/`.
-- Put a concise dated record of each substantive discussion in `docs/sessions/`.
-- Keep the documents short, factual, and cross-linked instead of duplicating content.
-- Update the vision, principles, glossary, or roadmap when a conclusion changes them.
-
-## Commit-message guidance
-
-After creating, updating, or deleting repository files, provide the user with a short recommended commit message. Do not create a commit unless the user asks.
-
-## Exploration phase
-
-Do not add implementation code unless explicitly requested. Clearly distinguish hypotheses, open questions, and decisions.
+After modifying repository files, provide a short recommended commit message. Do not commit unless the user asks.
