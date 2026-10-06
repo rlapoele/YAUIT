@@ -35,4 +35,5 @@ This direction preserves standard web primitives, keeps presentation separable f
 - [Vision](../vision.md)
 - [Concept brief](../ideas/html-presentation-units.md)
 - [ADR-002](ADR-002-declare-repetition-with-element-and-template-blueprints.md)
+- [ADR-003](ADR-003-declare-and-use-named-presentation-units.md)
 - [Session record](../sessions/2026-10-06-product-direction.md)

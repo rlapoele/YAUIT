@@ -34,6 +34,10 @@ A presentation blueprint with multiple top-level nodes and no rendered wrapper. 
 
 An HTML-defined presentation boundary that can be composed, reused, or activated. It may range from an existing DOM subtree or `<template>` instance to a custom element, page section, or page. Its exact qualification rules are the next subject of exploration.
 
+## Presentation-unit definition
+
+An inert, named, reusable presentation blueprint declared with `<template data-unit="name">`. Its template contents are the source from which instances can be created.
+
 ## Repeat declaration
 
 An HTML declaration marked with `data-repeat` that identifies a presentation blueprint to instantiate once for each value supplied by JavaScript. On an ordinary element, the element is the single-root blueprint. On a `<template>`, its contents are the multi-root blueprint.
@@ -45,3 +49,7 @@ The persistent logical location owned by a repeat declaration. It contains zero 
 ## Template
 
 An inert HTML blueprint, normally represented by `<template>`, from which DOM content may be instantiated. A template may define a presentation unit but is not synonymous with one.
+
+## Use declaration
+
+An HTML declaration marked with `data-use="name"` that requests an instance of the named presentation-unit definition at that location. Combining it with `data-repeat` requests one instance for each value supplied by JavaScript. Use-site host and placement semantics remain open.

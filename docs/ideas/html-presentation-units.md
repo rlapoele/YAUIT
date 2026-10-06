@@ -6,7 +6,7 @@ How might YAUIT let developers comfortable with vanilla HTML and JavaScript comp
 
 ## Recommended direction
 
-Treat an HTML-defined presentation unit as YAUIT's primary authoring concept. A unit can be static or can acquire separately implemented JavaScript behavior through a small, explicit, declarative contract.
+Treat an HTML-defined presentation unit as YAUIT's primary authoring concept. A named reusable unit is declared with `<template data-unit="name">`, and `data-use="name"` requests an instance. A unit can be static or can acquire separately implemented JavaScript behavior through a small, explicit, declarative contract.
 
 Support this experience with a minimal DOM activation kernel. Package capabilities beyond activation and composition as optional additions rather than making YAUIT a complete application runtime.
 
@@ -45,8 +45,7 @@ The same HTML contract should remain valid when the initial markup is supplied s
 
 ## Open questions
 
-- What precisely qualifies as a presentation unit, and how is its boundary identified?
-- Is `<template>` the primary definition mechanism, one of several mechanisms, or merely a native primitive YAUIT can use?
+- Beyond named `<template data-unit>` definitions, what else qualifies as a presentation unit and how is its boundary identified?
 - What is the minimum useful contract: configuration, inputs, actions, outcomes, lifecycle, or some subset?
 - How are nested presentation units isolated or coordinated?
 - Which responsibilities belong to a local behavior versus an application process?
@@ -54,4 +53,5 @@ The same HTML contract should remain valid when the initial markup is supplied s
 - How does JavaScript identify a repeat declaration and supply its collection?
 - Does a later collection replace all iterations or reconcile stable keyed instances?
 - How is conditional presentation declared and controlled?
-- What syntax refers to a separately defined unit from a repeat declaration?
+- Does an ordinary element carrying `data-use` get replaced, populated, or support an explicit choice?
+- How are unit names scoped, and what happens for missing or duplicate definitions?

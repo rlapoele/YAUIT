@@ -52,7 +52,7 @@ Syntax such as `data-for="todo in todos"` would require data scopes and an expre
 - Multi-root repetition uses the web platform's native inert fragment primitive.
 - Implementations must preserve logical repeat-region ownership even when no visible wrapper exists.
 - The JavaScript collection API, presentation callback contract, snapshot-versus-keyed update semantics, and internal boundary mechanism remain open.
-- Named-unit use syntax, conditional presentation, empty states, and asynchronous states remain separate questions.
+- Conditional presentation, empty states, and asynchronous states remain separate questions. Named-unit declaration and use are defined separately by ADR-003.
 - `data-outlet`, `data-part`, and a general `data-fragment` are not introduced by this decision.
 
 ## Standards basis
@@ -63,5 +63,6 @@ Syntax such as `data-for="todo in todos"` would require data scopes and an expre
 ## Related records
 
 - [ADR-001](ADR-001-html-presentation-units-and-behaviors.md)
+- [ADR-003](ADR-003-declare-and-use-named-presentation-units.md)
 - [Concept brief](../ideas/html-presentation-units.md)
 - [Session record](../sessions/2026-10-07-presentation-repetition.md)

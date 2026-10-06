@@ -3,6 +3,9 @@
 ## Conclusions
 
 - Application-level decomposition remains the developer's choice; YAUIT does not require every structural wrapper or empty state to be a presentation unit.
+- `<template data-unit="name">` declares a named reusable presentation-unit blueprint.
+- `data-use="name"` requests an instance of the matching named unit.
+- Combining `data-use` and `data-repeat` requests repeated instances of a named unit, with JavaScript supplying the collection.
 - HTML declares repeated presentation structure, while JavaScript supplies the collection.
 - `data-repeat` on an ordinary element repeats that single-root element blueprint.
 - `<template data-repeat>` repeats a multi-root fragment blueprint.
@@ -15,7 +18,8 @@
 - The JavaScript API that supplies a collection to a repeat declaration.
 - Snapshot replacement versus keyed reconciliation and instance preservation.
 - Internal repeat-region boundary and ownership mechanics.
-- Syntax for repeatedly using a separately defined presentation unit.
+- Unit-name grammar, resolution scope, missing and duplicate definitions, and cycle handling.
+- Whether an ordinary `data-use` host is replaced, populated, or supports an explicit choice.
 - Conditional presentation, including empty, loading, and error states.
 - The broader presentation-unit declaration and use grammar.
 
@@ -25,4 +29,5 @@
 - [Glossary](../glossary.md)
 - [Roadmap](../roadmap.md)
 - [ADR-002](../decisions/ADR-002-declare-repetition-with-element-and-template-blueprints.md)
+- [ADR-003](../decisions/ADR-003-declare-and-use-named-presentation-units.md)
 - [Concept brief](../ideas/html-presentation-units.md)
