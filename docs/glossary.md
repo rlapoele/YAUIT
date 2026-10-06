@@ -20,7 +20,7 @@ A request for an operation to be performed. Whether commands are part of YAUIT's
 
 ## Component
 
-A reusable presentation unit with an explicit contract and optional behaviors. A YAUIT component is not necessarily a custom element and does not necessarily require JavaScript.
+A presentation construct with persistent runtime identity through which it may own presentation, lifecycle, behavior, or a public interface. It may use a retained host or a custom element. A presentation unit may help construct or populate a component, but reuse, activation, or attachment of a behavior does not by itself make a presentation-unit instance a component.
 
 ## Contract
 
@@ -38,6 +38,10 @@ An HTML-defined presentation boundary that can be composed, reused, or activated
 
 An inert, named, reusable presentation blueprint declared with `<template data-unit="name">`. Its template contents are the source from which instances can be created.
 
+## Presentation-unit instance
+
+The DOM content created from a presentation-unit definition. An instance may occupy a wrapper-free logical region that YAUIT tracks for ownership or later updates. It is not necessarily a component and does not require a persistent host element.
+
 ## Repeat declaration
 
 An HTML declaration marked with `data-repeat` that identifies a presentation blueprint to instantiate once for each value supplied by JavaScript. On an ordinary element, the element is the single-root blueprint. On a `<template>`, its contents are the multi-root blueprint.
@@ -52,4 +56,4 @@ An inert HTML blueprint, normally represented by `<template>`, from which DOM co
 
 ## Use declaration
 
-An HTML declaration marked with `data-use="name"` that requests an instance of the named presentation-unit definition at that location. Combining it with `data-repeat` requests one instance for each value supplied by JavaScript. Use-site host and placement semantics remain open.
+An HTML declaration marked with `data-use="name"` that requests an instance of the named presentation-unit definition at that location. A `<template data-use>` declaration is consumed during activation rather than retained as a component host. Combining it with `data-repeat` requests one instance for each value supplied by JavaScript. Semantics for `data-use` on ordinary elements remain open.
