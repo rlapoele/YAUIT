@@ -10,6 +10,8 @@ Treat an HTML-defined presentation unit as YAUIT's primary authoring concept. A 
 
 Support this experience with a minimal DOM activation kernel. Package capabilities beyond activation and composition as optional additions rather than making YAUIT a complete application runtime.
 
+HTML declares repeated presentation structure while JavaScript supplies the collection. An ordinary element with `data-repeat` is a single-root blueprint; `<template data-repeat>` supplies a multi-root fragment blueprint. Both create a persistent logical repeat region rather than requiring a rendered wrapper.
+
 ## Key assumptions to validate
 
 - [ ] Standard HTML, `<template>`, and restrained `data-*` declarations can express useful composition without growing into a templating language.
@@ -24,6 +26,7 @@ After the presentation-unit and contract models are specified, validate one smal
 
 - a static presentation unit with no behavior;
 - a reusable `<template>` instantiated more than once;
+- single-root and multi-root repeated blueprints supplied with collections from JavaScript;
 - a registered local behavior attached declaratively;
 - composed units with explicit communication;
 - both initially rendered and dynamically inserted HTML.
@@ -38,6 +41,7 @@ The same HTML contract should remain valid when the initial markup is supplied s
 - **A mandatory state container** — state is unavoidable, but central ownership by YAUIT is not yet justified.
 - **Routing, persistence, and remote-fragment semantics** — these may become optional capabilities after the core model proves useful.
 - **An imposed atomic-design taxonomy** — nested composition should support such methodologies without prescribing one.
+- **Arbitrary removable fragment wrappers** — native `<template>` already represents an inert multi-root blueprint without introducing layout, parsing, or semantic ambiguity.
 
 ## Open questions
 
@@ -47,3 +51,7 @@ The same HTML contract should remain valid when the initial markup is supplied s
 - How are nested presentation units isolated or coordinated?
 - Which responsibilities belong to a local behavior versus an application process?
 - How should registration work in both direct-script and ES-module usage?
+- How does JavaScript identify a repeat declaration and supply its collection?
+- Does a later collection replace all iterations or reconcile stable keyed instances?
+- How is conditional presentation declared and controlled?
+- What syntax refers to a separately defined unit from a repeat declaration?

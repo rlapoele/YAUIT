@@ -28,11 +28,19 @@ The explicit boundary through which a presentation unit and JavaScript capabilit
 
 ## Fragment
 
-A chunk of HTML that can participate in composition. A fragment is not necessarily reusable, interactive, remotely loaded, or a component.
+A presentation blueprint with multiple top-level nodes and no rendered wrapper. For repetition, YAUIT represents such a blueprint with `<template data-repeat>`. A fragment is not necessarily reusable, interactive, remotely loaded, or a component.
 
 ## Presentation unit
 
 An HTML-defined presentation boundary that can be composed, reused, or activated. It may range from an existing DOM subtree or `<template>` instance to a custom element, page section, or page. Its exact qualification rules are the next subject of exploration.
+
+## Repeat declaration
+
+An HTML declaration marked with `data-repeat` that identifies a presentation blueprint to instantiate once for each value supplied by JavaScript. On an ordinary element, the element is the single-root blueprint. On a `<template>`, its contents are the multi-root blueprint.
+
+## Repeat region
+
+The persistent logical location owned by a repeat declaration. It contains zero or more rendered iterations and survives an empty collection or rerender even when no visible wrapper exists.
 
 ## Template
 
