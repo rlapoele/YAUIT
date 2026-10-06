@@ -1,7 +1,7 @@
 # YAUIT
 
-YAUIT has been reset for a fresh exploration.
+YAUIT is being explored as a buildless-first library for composing standard HTML presentation units and connecting them to reusable JavaScript behaviors through explicit contracts.
 
-No product direction, architecture, technology stack, or public API is currently accepted. Work begins with ideation and progresses through explicit decisions, specifications, plans, and implementation.
+The accepted direction is intentionally narrower than a complete web framework. YAUIT should activate HTML regardless of whether it was produced by CSR, SSR, SSG, or a hybrid strategy, without requiring a framework-wide state container or a build step.
 
-Project memory is organized under [`docs/`](docs/README.md). The current state is recorded in [`docs/current.md`](docs/current.md).
+No public API or implementation architecture has been specified yet. Project memory is organized under [`docs/`](docs/README.md), and the current state is recorded in [`docs/current.md`](docs/current.md).
